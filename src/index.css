@@ -1,13 +1,87 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+  height: 100%;
+}
+
+#root, .App {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.guesses {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
+  width: 100%;
+}
+
+.guess {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.guessLetter {
+  height: 62px;
+  width: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.keys {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 360px;
+  position: relative;
+  height: 175px;
+}
+
+.key {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 8px;
+  text-align: center;
+  height: 50px;
+  min-height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  margin: 0 5px 0 0;
+  background-color: gray;
+}
+
+.enter {
+  position: absolute;
+  top: 121px;
+  left: 5px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.delete {
+  position: absolute;
+  top: 121px;
+  right: 0;
+  cursor: pointer;
+  margin: 0;
+  width: 55px;
 }
