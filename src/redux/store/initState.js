@@ -7,7 +7,12 @@ function initState() {
             ['', '', '', '', ''],
             ['', '', '', '', ''],
             ['', '', '', '', '']
-        ]
+        ],
+        guessNum: 0,
+        answer: ['t', 'e', 'a', 'c', 'h'],
+        change: false,
+        end: false,
+        win: false
     }
 }
 

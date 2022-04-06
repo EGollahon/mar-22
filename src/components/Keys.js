@@ -1,6 +1,10 @@
 import Key from "./Key";
+import {useDispatch} from "react-redux";
+import {Delete} from "../redux/actions/Delete";
+import {SubmitGuess} from "../redux/actions/SubmitGuess";
 
 function Keys() {
+    const dispatch = useDispatch();
     const keys = 'qwertyuiopasdfghjklzxcvbnm'.split("");
 
     let keysEle = keys.map((item, index) =>
@@ -10,8 +14,8 @@ function Keys() {
     return (
         <div className="keys">
             {keysEle}
-            <div className="key enter">Enter</div>
-            <div className="key delete">Delete</div>
+            <div className="key enter" onClick={() => dispatch(SubmitGuess())}>Enter</div>
+            <div className="key delete" onClick={() => dispatch(Delete())}>Delete</div>
         </div>
     )
 }

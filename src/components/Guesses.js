@@ -1,9 +1,17 @@
 import Guess from "./Guess";
 import {useSelector} from "react-redux";
+import {useEffect, useState} from "react";
 
 function Guesses() {
     const guesses = useSelector(state=>state.guesses);
-    let guessEles = guesses.map((item, index) =>
+    const change = useSelector(state=>state.change);
+    const [gs, setGS] = useState(guesses);
+
+    useEffect(() => {
+        setGS(guesses);
+    }, [change, guesses])
+
+    let guessEles = gs.map((item, index) =>
         <Guess key={index} vl={item} />
     )
 
