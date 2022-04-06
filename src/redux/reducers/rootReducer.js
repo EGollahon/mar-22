@@ -6,7 +6,6 @@ const rootReducer = (state, action) => {
         case 'Delete':
             let nd;
             if (!state.end) {
-                let wn = false;
                 let item;
                 let stop = false;
 
@@ -17,10 +16,6 @@ const rootReducer = (state, action) => {
                             stop = true;
                         }
                     }
-                }
-
-                if (activeGuess.indexOf('') === 0) {
-                    wn = true;
                 }
 
                 const index = activeGuess.lastIndexOf(item);
@@ -42,11 +37,8 @@ const rootReducer = (state, action) => {
             let nl;
             if (!state.end) {
                 const index = activeGuess.indexOf('');
-                let wn = false;
                 if (activeGuess.includes('') && index < state.answer.length) {
                     activeGuess[index] = action.value;
-                } else {
-                    wn = true;
                 }
             }
 
